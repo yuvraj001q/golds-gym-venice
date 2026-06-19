@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gold's Gym Venice - The Mecca of Bodybuilding. Train where legends were forged. Claim your VIP pass today.">
+  <meta name="keywords" content="Gold's Gym, Venice Beach, Bodybuilding, Mecca, Fitness, Personal Training">
+  <meta property="og:title" content="Gold's Gym Venice - The Mecca of Bodybuilding">
+  <meta property="og:description" content="Train where legends were forged. Claim your 3-Day VIP Pass.">
+  <meta property="og:type" content="website">
+  <title>Gold's Gym Venice | The Mecca of Bodybuilding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">G</span>
+        <span class="nav__logo-text">GOLD'S GYM<span class="nav__logo-sub">VENICE</span></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#legacy" class="nav__link">Legacy</a></li>
+        <li><a href="#arsenal" class="nav__link">Arsenal</a></li>
+        <li><a href="#legends" class="nav__link">Legends</a></li>
+        <li><a href="#testimonials" class="nav__link">Reviews</a></li>
+        <li><a href="#final-cta" class="nav__link nav__link--cta">Get VIP Pass</a></li>
+      </ul>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__light-sweep"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="hero__tag">EST. 1965 &mdash; VENICE BEACH, CALIFORNIA</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">TRAIN AT</span>
+        <span class="hero__title-line hero__title-line--accent">THE MECCA</span>
+      </h1>
+      <p class="hero__subtitle">The world-famous training ground that shaped generations of champions.</p>
+      <div class="hero__ctas">
+        <button class="btn btn--primary btn--lg" id="heroCtaPrimary">
+          <span class="btn__text">CLAIM YOUR 3-DAY VIP PASS</span>
+          <span class="btn__shimmer"></span>
+        </button>
+        <a href="#legacy" class="btn btn--ghost btn--lg">EXPLORE THE FACILITY</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>SCROLL</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== VIP PASS MODAL ==================== -->
+  <div class="modal-overlay" id="vipModal">
+    <div class="modal">
+      <div class="modal__glow"></div>
+      <button class="modal__close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal__header">
+        <span class="modal__badge">VIP ACCESS</span>
+        <h2 class="modal__title">Claim Your 3-Day VIP Pass</h2>
+        <p class="modal__desc">Experience the Mecca with full facility access. No commitment required.</p>
+      </div>
+      <form class="modal__form" id="vipForm">
+        <div class="form-group">
+          <label for="vipName">Full Name</label>
+          <input type="text" id="vipName" placeholder="Arnold Schwarzenegger" required>
+        </div>
+        <div class="form-group">
+          <label for="vipEmail">Email Address</label>
+          <input type="email" id="vipEmail" placeholder="arnold@goldsgym.com" required>
+        </div>
+        <div class="form-group">
+          <label for="vipPhone">Phone Number</label>
+          <input type="tel" id="vipPhone" placeholder="(310) 555-0199" required>
+        </div>
+        <div class="form-group">
+          <label for="vipGoal">Fitness Goal</label>
+          <select id="vipGoal" required>
+            <option value="" disabled selected>Select your goal</option>
+            <option value="muscle">Build Muscle</option>
+            <option value="strength">Get Stronger</option>
+            <option value="lean">Get Lean</option>
+            <option value="compete">Compete</option>
+            <option value="general">General Fitness</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="vipSubmit">
+          <span class="btn__text">SEND MY PASS</span>
+          <span class="btn__shimmer"></span>
+        </button>
+      </form>
+      <div class="modal__automation" id="vipAutomation">
+        <div class="automation-step" data-step="1">
+          <span class="automation-step__icon">&#10003;</span>
+          <span class="automation-step__text">Lead Captured</span>
+          <span class="automation-step__status">Complete</span>
+        </div>
+        <div class="automation-step" data-step="2">
+          <span class="automation-step__icon">&#10003;</span>
+          <span class="automation-step__text">SMS Sent with VIP Pass</span>
+          <span class="automation-step__status">Complete</span>
+        </div>
+        <div class="automation-step" data-step="3">
+          <span class="automation-step__icon">&#10003;</span>
+          <span class="automation-step__text">Trial Appointment Scheduled</span>
+          <span class="automation-step__status">Complete</span>
+        </div>
+        <div class="automation-step" data-step="4">
+          <span class="automation-step__icon">&#10003;</span>
+          <span class="automation-step__text">Front Desk Team Notified</span>
+          <span class="automation-step__status">Complete</span>
+        </div>
+        <div class="automation-complete" id="automationComplete">
+          <div class="automation-complete__check">&#10003;</div>
+          <p class="automation-complete__text">Your VIP Pass Has Been Sent!</p>
+          <p class="automation-complete__sub">Check your phone for a text message with your guest pass details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SOCIAL PROOF ==================== -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat" data-reveal>
+          <span class="stat__number" data-count="1965">0</span>
+          <span class="stat__label">Founded</span>
+          <span class="stat__bar"></span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__number" data-count="100" data-suffix="M+">0</span>
+          <span class="stat__label">Global Brand Reach</span>
+          <span class="stat__bar"></span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__number" data-count="10" data-suffix="M+">0</span>
+          <span class="stat__label">Workouts Logged</span>
+          <span class="stat__bar"></span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__number stat__number--text">THE</span>
+          <span class="stat__label">Mecca of Bodybuilding</span>
+          <span class="stat__bar"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE LEGACY ==================== -->
+  <section class="legacy" id="legacy">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">OUR STORY</span>
+        <h2 class="section-title">THE LEGACY</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__line"></div>
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">1965</div>
+          <div class="timeline__card">
+            <h3 class="timeline__card-title">The Beginning</h3>
+            <p class="timeline__card-text">Joe Gold opens a small cinder-block gym at 1006 Pacific Avenue in Venice Beach, California. A dream forged in iron and ambition.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-reveal>
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">1977</div>
+          <div class="timeline__card">
+            <h3 class="timeline__card-title">Pumping Iron</h3>
+            <p class="timeline__card-text">Arnold Schwarzenegger and Lou Ferrigno bring Venice to the world stage. The Golden Era explodes. The Mecca is born.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">1980s&ndash;2000s</div>
+          <div class="timeline__card">
+            <h3 class="timeline__card-title">Global Recognition</h3>
+            <p class="timeline__card-text">The pilgrimage destination for serious lifters worldwide. Every champion must train at the Mecca at least once.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-reveal>
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">2020</div>
+          <div class="timeline__card">
+            <h3 class="timeline__card-title">Renaissance</h3>
+            <p class="timeline__card-text">RSG Group acquisition. $100 Million modernization. The hardcore culture preserved. A new era for the Mecca.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE ARSENAL ==================== -->
+  <section class="arsenal" id="arsenal">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">EQUIPMENT</span>
+        <h2 class="section-title">THE ARSENAL</h2>
+        <p class="section-desc">World-class equipment. No compromises. Every machine chosen for one purpose: results.</p>
+      </div>
+      <div class="arsenal__grid">
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9878;</div>
+          <h3 class="arsenal__card-title">Old-School Nautilus Machines</h3>
+          <p class="arsenal__card-text">Center-drive engineering for biomechanically perfect resistance curves. Built for the lifter who understands precision.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9881;</div>
+          <h3 class="arsenal__card-title">Cybex Smith Machines</h3>
+          <p class="arsenal__card-text">Industrial-grade Smith machines designed for decades of heavy use. The foundation of serious training programs.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9883;</div>
+          <h3 class="arsenal__card-title">Gym80 Isolateral Machines</h3>
+          <p class="arsenal__card-text">German-engineered isolateral machines for professional-level unilateral training. Symmetry starts here.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9728;</div>
+          <h3 class="arsenal__card-title">Outdoor Workout Area</h3>
+          <p class="arsenal__card-text">California sunshine meets raw iron. Green walls. Legendary atmosphere. Train under the Venice sky.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9889;</div>
+          <h3 class="arsenal__card-title">Functional Training Zone</h3>
+          <p class="arsenal__card-text">Kettlebells. Sleds. Battle ropes. Conditioning equipment for athletes who train beyond aesthetics.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+        <div class="arsenal__card" data-reveal data-tilt>
+          <div class="arsenal__card-icon">&#9886;</div>
+          <h3 class="arsenal__card-title">Premium Locker Rooms</h3>
+          <p class="arsenal__card-text">Modern storage. Recovery amenities. Luxury finishes. The details that separate a gym from an experience.</p>
+          <div class="arsenal__card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRAIN WITH LEGENDS ==================== -->
+  <section class="legends" id="legends">
+    <div class="container">
+      <div class="legends__layout">
+        <div class="legends__left" data-reveal>
+          <span class="section-tag">HERITAGE</span>
+          <h2 class="legends__title">TRAIN WITH<br><span class="text-accent">LEGENDS</span></h2>
+          <div class="legends__quote">
+            <blockquote>"The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not."</blockquote>
+            <cite>&mdash; Arnold Schwarzenegger</cite>
+          </div>
+        </div>
+        <div class="legends__right" data-reveal>
+          <div class="legends__story">
+            <div class="legends__story-block">
+              <h3>The Golden Era</h3>
+              <p>In the 1970s, Venice Beach became the epicenter of the bodybuilding universe. Arnold Schwarzenegger, Lou Ferrigno, Franco Columbu, and a generation of icons turned Gold's Gym into a global phenomenon.</p>
+            </div>
+            <div class="legends__story-block">
+              <h3>Pumping Iron</h3>
+              <p>When the cameras rolled for Pumping Iron in 1977, the world saw what Venice already knew: this was where champions were made. The documentary forever cemented Gold's Gym as the most famous gym on Earth.</p>
+            </div>
+            <div class="legends__story-block">
+              <h3>A Living Legacy</h3>
+              <p>Today, the walls of Gold's Gym Venice carry the spirit of every athlete who trained here. From golden era bodybuilders to modern-day competitors, the Mecca remains hallowed ground.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AI FRONT DESK DEMO ==================== -->
+  <section class="ai-demo" id="ai-demo">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">AI POWERED</span>
+        <h2 class="section-title">FRONT DESK AI</h2>
+        <p class="section-desc">Meet your 24/7 AI front desk. It captures leads, schedules appointments, and delivers guest passes automatically.</p>
+      </div>
+    </div>
+    <div class="chat-widget" id="chatWidget">
+      <div class="chat-widget__header">
+        <div class="chat-widget__header-left">
+          <div class="chat-widget__avatar">AI</div>
+          <div>
+            <span class="chat-widget__name">VENICE FRONT DESK AI</span>
+            <span class="chat-widget__status"><span class="chat-widget__status-dot"></span> Online</span>
+          </div>
+        </div>
+        <button class="chat-widget__minimize" id="chatMinimize" aria-label="Minimize chat">&#8722;</button>
+      </div>
+      <div class="chat-widget__messages" id="chatMessages">
+        <div class="chat-msg chat-msg--ai">
+          <div class="chat-msg__avatar">AI</div>
+          <div class="chat-msg__content">
+            <p>Welcome to Gold's Gym Venice. I'm your AI assistant. How can I help you today?</p>
+            <span class="chat-msg__time">Just now</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-widget__input-area">
+        <div class="chat-widget__quick-replies" id="quickReplies">
+          <button class="quick-reply" data-message="I want to build muscle">Build Muscle</button>
+          <button class="quick-reply" data-message="I want to get stronger">Get Stronger</button>
+          <button class="quick-reply" data-message="I want to get lean">Get Lean</button>
+        </div>
+        <div class="chat-widget__input-row">
+          <input type="text" class="chat-widget__input" id="chatInput" placeholder="Type your message...">
+          <button class="chat-widget__send" id="chatSend" aria-label="Send message">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AUTOMATION SHOWCASE ==================== -->
+  <section class="automation-showcase" id="automation-showcase">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">THE SYSTEM</span>
+        <h2 class="section-title">AUTOMATION PIPELINE</h2>
+        <p class="section-desc">Every visitor becomes a lead. Every lead gets a follow-up. Every follow-up drives a gym visit.</p>
+      </div>
+      <div class="pipeline" data-reveal>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#127760;</div>
+          <div class="pipeline__label">Visitor</div>
+          <div class="pipeline__connector"></div>
+        </div>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#129302;</div>
+          <div class="pipeline__label">AI Conversation</div>
+          <div class="pipeline__connector"></div>
+        </div>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#128203;</div>
+          <div class="pipeline__label">Lead Capture</div>
+          <div class="pipeline__connector"></div>
+        </div>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#128241;</div>
+          <div class="pipeline__label">SMS Delivery</div>
+          <div class="pipeline__connector"></div>
+        </div>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#128197;</div>
+          <div class="pipeline__label">Appointment Scheduled</div>
+          <div class="pipeline__connector"></div>
+        </div>
+        <div class="pipeline__item">
+          <div class="pipeline__icon">&#127947;</div>
+          <div class="pipeline__label">Gym Visit</div>
+        </div>
+      </div>
+      <div class="automation-showcase__note" data-reveal>
+        <p>This is what your website could be doing. <strong>Capturing leads while you sleep.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">COMMUNITY</span>
+        <h2 class="section-title">WHAT MEMBERS SAY</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial-card" data-reveal data-tilt>
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"I've trained at gyms across the country. Nothing compares to walking through those doors at Gold's Venice. The energy is unmatched. The equipment is top-tier. This is where you come to put in real work."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">MR</div>
+            <div>
+              <strong>Marcus Reed</strong>
+              <span>Strength Athlete &mdash; 8 years member</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-reveal data-tilt>
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"Every time I train here I feel connected to the history. Arnold trained on these floors. Pumping Iron was filmed here. It's not just a gym, it's a pilgrimage. Best gym experience in the world."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">DK</div>
+            <div>
+              <strong>Derek Kim</strong>
+              <span>Competitive Bodybuilder</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-reveal data-tilt>
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"I travel for work constantly but I always plan my trips around training at Venice. The locker rooms are premium, the equipment is maintained perfectly, and the staff actually understands serious training."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JR</div>
+            <div>
+              <strong>James Rodriguez</strong>
+              <span>Busy Professional &mdash; Weekend Warrior</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-reveal data-tilt>
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"I walked in as a beginner and everyone treated me like family. The AI front desk helped me get started with a free pass, and the personal training is incredible. Down 30 pounds in 4 months."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SC</div>
+            <div>
+              <strong>Sarah Chen</strong>
+              <span>Beginner &mdash; Transformation Story</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="final-cta" id="final-cta">
+    <div class="final-cta__bg"></div>
+    <div class="container">
+      <div class="final-cta__content" data-reveal>
+        <span class="section-tag section-tag--light">LIMITED OFFER</span>
+        <h2 class="final-cta__title">YOUR VIP PASS<br><span class="text-accent">IS WAITING</span></h2>
+        <p class="final-cta__desc">Enter your details and receive your pass instantly via SMS. No commitment. No pressure. Just results.</p>
+        <form class="final-cta__form" id="finalForm">
+          <div class="final-cta__form-grid">
+            <div class="form-group">
+              <label for="finalName">Full Name</label>
+              <input type="text" id="finalName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="finalPhone">Phone Number</label>
+              <input type="tel" id="finalPhone" placeholder="(310) 555-0199" required>
+            </div>
+            <div class="form-group">
+              <label for="finalEmail">Email Address</label>
+              <input type="email" id="finalEmail" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="finalGoal">Fitness Goal</label>
+              <select id="finalGoal" required>
+                <option value="" disabled selected>Select your goal</option>
+                <option value="muscle">Build Muscle</option>
+                <option value="strength">Get Stronger</option>
+                <option value="lean">Get Lean</option>
+                <option value="compete">Compete</option>
+                <option value="general">General Fitness</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full btn--lg">
+            <span class="btn__text">TEXT ME MY PASS</span>
+            <span class="btn__shimmer"></span>
+          </button>
+        </form>
+        <div class="final-cta__workflow" id="finalWorkflow">
+          <div class="workflow-step" data-step="1">
+            <div class="workflow-step__dot"></div>
+            <span>Lead Received</span>
+          </div>
+          <div class="workflow-step" data-step="2">
+            <div class="workflow-step__dot"></div>
+            <span>SMS Delivered</span>
+          </div>
+          <div class="workflow-step" data-step="3">
+            <div class="workflow-step__dot"></div>
+            <span>Appointment Booked</span>
+          </div>
+          <div class="workflow-step" data-step="4">
+            <div class="workflow-step__dot"></div>
+            <span>Coach Notified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="nav__logo-icon">G</span>
+            <span class="nav__logo-text">GOLD'S GYM<span class="nav__logo-sub">VENICE</span></span>
+          </a>
+          <p class="footer__brand-text">The Mecca of Bodybuilding. Training champions since 1965.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4 class="footer__col-title">History</h4>
+            <ul>
+              <li><a href="#legacy">Our Legacy</a></li>
+              <li><a href="#legends">The Legends</a></li>
+              <li><a href="#stats">By The Numbers</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Facilities</h4>
+            <ul>
+              <li><a href="#arsenal">The Arsenal</a></li>
+              <li><a href="#arsenal">Outdoor Area</a></li>
+              <li><a href="#arsenal">Locker Rooms</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Membership</h4>
+            <ul>
+              <li><a href="#final-cta">VIP Pass</a></li>
+              <li><a href="#final-cta">Join Now</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">AI Front Desk</h4>
+            <ul>
+              <li><a href="#ai-demo">Try Demo</a></li>
+              <li><a href="#automation-showcase">How It Works</a></li>
+              <li><a href="#final-cta">Get Started</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Gold's Gym Venice. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CHAT FLOATING BUTTON ==================== -->
+  <button class="chat-fab" id="chatFab" aria-label="Open AI chat">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="chat-fab__pulse"></span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
